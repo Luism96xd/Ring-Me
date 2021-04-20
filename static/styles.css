@@ -1,0 +1,305 @@
+:root{
+    --primaryColor: #38B6FF;
+    --darkColor: #222;
+    --lightColor: #fff;
+    --grayColor: #D9D9D9;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+*{
+    margin:0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    grid-gap: 16px;
+    grid-template-rows: 128px 1fr auto;
+}
+.container .filter{
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / -1;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+    grid-gap: 48px;
+}
+.container .filter div{
+    background: var(--grayColor);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 32px;
+}
+.container .filter div:last-child{
+    background: var(--darkColor);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+}
+.container .filter div:last-child a{
+    color: var(--lightColor);
+}
+.container .filter div a{
+    font-family: 'Poppins';
+    font-size: 1.25em;
+    text-decoration: none;
+    color: var(--darkColor);
+}
+.container .products{
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / -1;
+    grid-row-start: 2;
+    display: grid;
+    grid-gap: 64px;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+}
+.container .products .product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: bold;
+    grid-template-rows: 1fr 32px 64px;
+    box-shadow: -1px 4px 8px 4px var(--grayColor);
+    border-radius: 24px;
+    padding-bottom: 24px;
+}
+.container .products div h2{
+    width: 100%;
+    text-align: center;
+    padding: 8px 32px;
+}
+.container .products div .info{
+    display: flex;
+    justify-content: space-between;
+    color: var(--darkColor);
+    padding: 4px 8px;
+    width: 100%;
+    text-align: center;
+}
+.container .products div img{
+    width: 100%;
+    height: auto;
+    border-radius: 23px 23px 0 0;
+    aspect-ratio: 16/9;
+    border-bottom: 2px solid var(--darkColor);
+}
+.outline-btn{
+    width: 90%;
+    height: 40px;
+    border: 2px solid var(--darkColor);
+    border-radius: 8px;
+    background: var(--lightColor);
+    color: var(--darkColor);
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-size: 1.05rem;
+    box-shadow: 0px 2px 12px var(--grayColor);
+    transition: 0.25s;
+}
+.outline-btn:hover{
+    background: var(--primaryColor);
+    color: var(--lightColor);
+    border: 2px solid var(--primaryColor);
+    cursor: pointer;
+}
+footer{
+    position: relative;
+    text-align: center;
+    background: var(--darkColor);
+    width: 100%;
+    font-family: 'Poppins';
+    font-size: 1.2em;
+    color: var(--lightColor);
+    font-weight: 500;
+    padding: 8px 32px;
+}
+/*Barra de navegación*/
+nav{
+    background: linear-gradient(45deg, #353e46, var(--darkColor));
+    height: 80px;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0px 4px 4px #aaa;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+label.logo{
+    color: var(--lightColor);
+    text-align: center;
+    padding: 0 32px;
+    font-size: 1.25em;
+    font-weight: bold;
+    display:flex;
+    align-items: center;
+    width: auto;
+}
+label img{
+    width: auto;
+    padding: 8px 0 0 4px;
+    height: 80px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    z-index: 999;
+    position: sticky;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    position: relative;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav ul li a{
+    color: var(--lightColor);
+    font-size: 18px;
+    padding: 4px 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+nav ul li a:active, nav ul li a:hover{
+    color: var(--primaryColor);
+}
+
+/*SOCIAL MEDIA ICONS*/
+
+/* Style all font awesome icons */
+.social-media{
+    width: auto;
+    min-width: 200px;
+    text-align: center;
+}
+.fa {
+    padding: 16px;
+    font-size: 24px;
+    width: 32px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: 0.1s;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    color: var(--primaryColor);
+    /*opacity: 0.7;*/
+  }
+/*END SOCIAL MEDIA ICONS*/
+
+.checkbtn{
+    float: right;
+    cursor: pointer;
+    display: none;
+    user-select: none;
+    line-height: 80px;
+    border-top: 6px solid #eee;
+    width: 32px;
+    margin-right: 32px;
+    border-radius: 1px;
+    position: relative;
+}
+.checkbtn::before{
+    display: none;
+    float: right;
+    position: absolute;
+    content: "";
+    top: 6px;
+    left: 0;
+    width: 32px;
+    border-radius: 1px;
+    border-top: 6px solid #eee;
+}
+.checkbtn::after{
+    display: none;
+    float: right;
+    width: 32px;
+    position: absolute;
+    border-top: 6px solid #eee;
+    content: "";
+    border-radius: 1px;
+    top: -17px;
+    left: 0;
+}
+#check{
+    display: none;
+    user-select: none;
+}
+/*Fin de la Barra de navegación*/
+@media (max-width: 952px){
+    label.logo{
+        font-size: 1.5rem;
+        padding-left: 32px;
+        width: 200px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn, .checkbtn::before, .checkbtn::after{
+        display: block;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #232b3b;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    .social-media{
+        margin-right: 32px;
+        display: none;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    nav ul li a:hover, nav ul li a:active{
+        background: none;
+        color: var(--primaryColor);
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+    .container .filter, .container .products{
+        grid-gap: 32px;
+    }
+    .container .products div h2{
+    width: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 8px 32px;
+    }
+}
